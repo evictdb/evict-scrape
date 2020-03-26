@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "chromedriver": "^80.0.1",
-    "nightwatch": "^1.3.4"
+    "nightwatch": "^1.3.4",
+    "readline-sync": "^1.4.10"
   }
 }
