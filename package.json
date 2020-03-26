@@ -1,0 +1,15 @@
+{
+  "name": "evict-scrape",
+  "version": "0.0.1",
+  "description": "Scrape county court records for eviction filings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chromedriver": "^80.0.1",
+    "nightwatch": "^1.3.4"
+  }
+}
