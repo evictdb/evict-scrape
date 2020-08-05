@@ -1,0 +1,10 @@
+{
+  "name": "upsert",
+  "version": "1.0.0",
+  "description": "Upload and overwrite or insert new case data to google sheet",
+  "main": "upsert.js",
+  "type": "module",
+  "author": "Drew Nolan",
+  "license": "MIT",
+  "private": false
+}

@@ -1,4 +1,16 @@
+creds-from-google.json
 tests_output
+chromedriver.log
+EvictScrape_*
+cases2014/
+cases2015/
+cases_flat*.json
+cases.json
+creds-from-google*.json
+batch_data_*.json
+run_data*.json
+run_data*.json.prev
+.DS_Store
 
 # Logs
 logs
