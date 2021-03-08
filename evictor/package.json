@@ -1,0 +1,16 @@
+{
+  "name": "evictor",
+  "version": "1.0.0",
+  "description": "Bring together evictor data",
+  "main": "evictor.js",
+  "type": "module",
+  "author": "Drew Nolan",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "commander": "^6.1.0",
+    "csv-parse": "^4.12.0",
+    "sqlite": "^4.0.14",
+    "sqlite3": "^5.0.0"
+  }
+}

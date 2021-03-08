@@ -58,9 +58,18 @@ const main = async () => {
     const greatestTimestamp = moment(cases.reduce((a, c) => a > c["Time Stamp"] ? a : c["Time Stamp"], cases[0]["Time Stamp"]));
     if (options.verbose) console.log(`Latest Time Stamp: ${greatestTimestamp.format()}`);
 
-    const headers = Object.keys(cases[0]);
+
+    const headers = [
+      'Case Number', 'Filed',
+      'Status', 'Summary',
+      'Action', 'Residence',
+      'Plaintiffs', 'Defendants',
+      'Total Costs', 'Total Due',
+      'Dockets', 'Web Link',
+      'Time Stamp'
+    ];
     if (options.verbose) {
-      console.group(`Headers from json file:`);
+      console.group(`Headers from json files:`);
       console.log(headers);
       console.groupEnd();
     }

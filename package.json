@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "chromedriver": "^83.0.0",
+    "chromedriver": "^88.0.0",
     "google-spreadsheet": "^3.0.11",
     "minimist": "^1.2.5",
     "moment": "^2.27.0",
