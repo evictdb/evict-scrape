@@ -1,3 +1,5 @@
+// TODO: dump this version now that we have working puppeteer version
+
 const fs = require('fs');
 const path = require('path');
 const moment = require('moment');

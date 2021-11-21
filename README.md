@@ -9,7 +9,6 @@ A thrown together tool to scrape eviction court cases from the Alachua County, F
     - [Installation](#installation)
   - [Running the scraper](#running-the-scraper)
     - [The Captcha](#the-captcha)
-    - [Manual search options](#manual-search-options)
     - [Scraper output files](#scraper-output-files)
     - [Command Line Options](#command-line-options)
     - [Restarting](#restarting)
@@ -40,38 +39,21 @@ This code is at best experimental and I see it as a first step to explore some i
 
 Once things are set up, the scraper can be run in a terminal window from the root folder using the following command:
 ```
-  npm start
+  node scrape/scrape2.js --start-date <date>
 ```
-Running with no parameters will trigger a single batch run with a manually specified search.  This is explained in detail over the next several sections.  For more information on automated searches see the [Options](#options) section below.
+For more information on automated search options see the [Options](#options) section below.
 
-Once started, you will see a browser window pop up and a series of messages informing you as to the progress of the scraper. Things will stop very soon, however, because you will need to solve the captcha.  For more on the captcha, see the next section.
+Once started, the terminal will show a series of messages informing you as to the progress of the scraper. Things will stop very soon, however, because you will need to solve the captcha.  For more on the captcha, see the next section.
 
 You can quit the process at any time in the terminal window by pressing `<Ctrl>-C`.
 
 ### The Captcha ###
 
-Early in the process, the scraper will stop on a 'captcha' screen in the browser and give the following message in the terminal window:
-```
-  Type CAPTCHA Text on browser
-```
-The captcha puzzle is intended to block automated processes from overloading the court records or doing other malicious activities.  You as a human will have to solve the captch puzzle in order to let the scraper proceed.
+Early in the process, the scraper will stop and display a 'captcha' in the terminal and wait for you to enter the solution.  If the captcha is not readable, try increasing the size of the terminal.
 
-Simply change to the browser window showing the captcha, type in the solution, and then go back to the terminal window and press `<ENTER>` to proceed.
+The captcha puzzle is intended to block automated processes from overloading the court records or doing other malicious activities.  You as a human will have to solve the captcha puzzle in order to let the scraper proceed.
 
-Note, it is preferrable that you not submit the captcha solution by pressing `<ENTER>` in the browser or clicking the submit button, but, if you do, the process will still work and you will just get an extraneous warning at the end.
-
-### Manual search options ###
-
-If no options were provided the scraper will be in manual search mode, meaning you will have to enter the search parameters.  After the captcha is solved, the scraper will proceed to the search page and stop.  A prompt will appear in the terminal window:
-```
-  No Start Date Specified - Manual Search Parameters Required.
-  Edit Search Criteria on browser
-```
-Switch to the browser window showing the search criteria, edit the fields to create the search you want, and then go back to the terminal window and press `<ENTER>` to proceed.
-
-Like the captcha screen, it is preferrable that you not submit the search by pressing `<ENTER>` in the browser or clicking the submit button, but, if you do, the process will still work and you will just get an extraneous warning at the end.
-
-Depending on the size of the search you specify, it may take a long time to retrieve the data or the search may not return every matching record.  Searches that retrieve more than 900 entries tend to be truncated.  It is best to only search for a week or so of data at a time.
+Simply type in the solution and press `<ENTER>` to proceed.
 
 ### Scraper output files ###
 
