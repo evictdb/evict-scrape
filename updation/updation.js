@@ -121,7 +121,16 @@ const main = async () => {
         title: 'Eviction Cases',
         headerValues: headers
       });
-      const rows = await sheet.addRows(cases);
+      let i,
+        j,
+        temparray,
+        chunk = 5000;
+      for (i = 0, j = cases.length; i < j; i += chunk) {
+        temparray = cases.slice(i, i + chunk);
+        const rows = await sheet.addRows(temparray);
+      }
+
+
     }
 
   } catch (error) {

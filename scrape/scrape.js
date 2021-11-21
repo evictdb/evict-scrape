@@ -191,9 +191,13 @@ module.exports = {
         console.group(batchHeader);
         if(!runData.transientConfiguration.noScrape) {
 
-          browser.url('https://www.alachuaclerk.org/court_records/gis/')
-          browser.waitForElementVisible('#GISForm select[name=CaseType]')
-          browser.click('#GISForm select[name="CaseType"] option[value="CCLT"]')
+//          browser.url('https://www.alachuaclerk.org/court_records/gis/')
+          browser.url('https://www.alachuaclerk.org/court_records/index.cfm');
+          await browser.waitForElementVisible('#contents')
+
+          await browser.click('#contents a[href="gis/"]')
+          await browser.waitForElementVisible('#GISForm select[name=CaseType]')
+          await browser.click('#GISForm select[name="CaseType"] option[value="CCLT"]')
 
           if (batch.type === 'manual') {
             console.log("No Start Date Specified - Manual Search Parameters Required.")
@@ -205,11 +209,12 @@ module.exports = {
             await browser.setValue('#EndFileDate', moment(batch.endDate).format('MM/DD/YYYY'));
           }
           browser.click('#GISForm input[type=submit]')
-
+browser.waitForManualAction('1')
           browser.waitForElementVisible('#contents')
           browser.url('https://www.alachuaclerk.org/court_records/gis/index.cfm?section=results&viewall=y')
 
           browser.waitForElementVisible('#contents');
+browser.waitForManualAction('2')
 
           const data = await browser.elements('css selector', 'tr.result_data,tr.result_data_alt');
 
